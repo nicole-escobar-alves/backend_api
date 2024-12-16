@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: techchallenger
+  datasource:
+    url: jdbc:postgresql://localhost:5433/gestaopedidos
+    username: postgres
+    password: secret
+  jpa:
+    hibernate:
+      ddl-auto: update
+# OpenApi
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    operationsSorter: method
+    tagsSorter: alpha
+  version: v1
+  show-actuator: true

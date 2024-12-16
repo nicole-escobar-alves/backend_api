@@ -1,0 +1,6 @@
+br\com\fiap\postech\techchallenge\application\service\ProductServiceTest.class
+br\com\fiap\postech\techchallenge\fixture\AddonFixture.class
+br\com\fiap\postech\techchallenge\application\service\OrderServiceTest.class
+br\com\fiap\postech\techchallenge\fixture\ProductFixture.class
+br\com\fiap\postech\techchallenge\TechchallengeApplicationTests.class
+br\com\fiap\postech\techchallenge\application\service\AddonServiceTest.class
