@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2024-10-07T00:08:18-0300",
-    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.9 (Amazon.com Inc.)"
+    date = "2024-12-17T10:50:42-0300",
+    comments = "version: 1.5.5.Final, compiler: javac, environment: Java 17.0.4.1 (Eclipse Adoptium)"
 )
 @Component
 public class IPaymentOrderMapperImpl implements IPaymentOrderMapper {
@@ -39,6 +39,7 @@ public class IPaymentOrderMapperImpl implements IPaymentOrderMapper {
         paymentOrder.setPaymentStatus( entityBase.getPaymentStatus() );
         paymentOrder.setTotalPrice( entityBase.getTotalPrice() );
         paymentOrder.setPaymentType( entityBase.getPaymentType() );
+        paymentOrder.setQrCode( entityBase.getQrCode() );
 
         return paymentOrder;
     }
@@ -58,6 +59,7 @@ public class IPaymentOrderMapperImpl implements IPaymentOrderMapper {
         paymentOrderEntity.setPaymentStatus( domain.getPaymentStatus() );
         paymentOrderEntity.setTotalPrice( domain.getTotalPrice() );
         paymentOrderEntity.setOrder( iOrderMapper.toEntity( domain.getOrder() ) );
+        paymentOrderEntity.setQrCode( domain.getQrCode() );
 
         return paymentOrderEntity;
     }
@@ -88,6 +90,7 @@ public class IPaymentOrderMapperImpl implements IPaymentOrderMapper {
         paymentOrderDTO.setPaymentTypeName( paymentOrder.getPaymentType() );
         paymentOrderDTO.setId( paymentOrder.getId() );
         paymentOrderDTO.setTotalPrice( paymentOrder.getTotalPrice() );
+        paymentOrderDTO.setQrCode( paymentOrder.getQrCode() );
 
         return paymentOrderDTO;
     }
