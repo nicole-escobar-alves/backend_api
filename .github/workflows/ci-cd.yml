@@ -49,7 +49,10 @@ jobs:
 
       - name: Update Kube Config
         run: aws eks update-kubeconfig --name ${{ env.CLUSTER_NAME }} --region ${{ env.REGION_DEFAULT }}
-
+      
       - name: Kube set image
-        run: |
+        run: | 
+          kubectl apply -f ./k8s/app-api-deployment.yaml
+          kubectl apply -f ./k8s/app-api-hpa.yaml
+          kubectl apply -f ./k8s/app-api-service.yaml
           kubectl set image deployment/gestaopedidos-deployment gestaopedidos=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ env.REGION_DEFAULT }}.amazonaws.com/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}
