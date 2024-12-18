@@ -19,7 +19,7 @@ spec:
             - containerPort: 8080
           env:
             - name: DB_HOST
-              value: terraform-20241218025751363800000001.crusf4kyur0s.452371883837.rds.amazonaws.com
+              value: terraform-20241218025751363800000001.crusf4kyur0s.us-east-1.rds.amazonaws.com
             - name: DB_PORT
               value: "5432"
             - name: DB_NAME

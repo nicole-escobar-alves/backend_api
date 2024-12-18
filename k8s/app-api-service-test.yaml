@@ -1,9 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: gestaopedidos-service-lb
-  annotations:
-    service.beta.kubernetes.io/aws-load-balancer-type: "nlb" 
+  name: gestaopedidos-service
 spec:
   selector:
     app: gestaopedidos
@@ -11,4 +9,4 @@ spec:
     - protocol: TCP
       port: 80
       targetPort: 8080
-  type: LoadBalancer
+  type: ClusterIP
