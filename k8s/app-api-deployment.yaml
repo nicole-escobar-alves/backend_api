@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
         - name: gestaopedidos
-          image: 103531044887.dkr.ecr.us-east-1.amazonaws.com/tech_challenge_repository:latest
+          image: 452371883837.dkr.ecr.us-east-1.amazonaws.com/tech_challenge_repository:latest
           ports:
             - containerPort: 8080
           env:
             - name: DB_HOST
-              value: db-service
+              value: terraform-20241218025751363800000001.crusf4kyur0s.452371883837.rds.amazonaws.com
             - name: DB_PORT
               value: "5432"
             - name: DB_NAME
@@ -27,7 +27,7 @@ spec:
             - name: DB_USER
               value: postgres
             - name: DB_PASSWORD
-              value: secret
+              value: Secret123456
             - name: ML_ACCESS_TOKEN
               value: APP_USR-4103898864629348-100313-818c0e2802debe0ad24344fa2b6bcc46-2016994601
             - name: ML_USER_ID
@@ -35,18 +35,7 @@ spec:
             - name: ML_EXTERNAL_POS_ID
               value: caixa1
             - name: APP_URL
-              value: https://bf6xujlaqd.execute-api.us-east-1.amazonaws.com
-          readinessProbe:
-            exec:
-              command:
-                - sh
-                - -c
-                - "pg_isready -h db-service -p 5432 -U postgres -d gestaopedidos"
-            initialDelaySeconds: 10
-            periodSeconds: 10
-            timeoutSeconds: 5
-            successThreshold: 1
-            failureThreshold: 3
+              value: https://ngbczhmwee.execute-api.us-east-1.amazonaws.com/gestaopedidos
           resources:
             requests:
               cpu: "100m"
